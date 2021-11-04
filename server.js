@@ -1,4 +1,4 @@
-//express//mongoose//cors/
+//express//mongoose//cors//dotenv
 const express = require('express');
 const mongoose = require('mongoose')//for database
 const cors = require('cors')
@@ -14,9 +14,9 @@ app.get('/', (req, res) => {
   res.send("post app")
 })
 
-//controllers
-// const postsController = require('./controllers/post.js')
-// app.use('/posts', postsController)
+// controllers
+const postsController = require('./controllers/posts.js')
+app.use('/posts', postsController)
   
 app.listen(PORT, () => {
   console.log('listening to', PORT)
