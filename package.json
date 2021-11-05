@@ -1,6 +1,9 @@
 {
   "name": "projectapp_back",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.9.1"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
