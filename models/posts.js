@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const postsSchema = new mongoose.Schema(
   {
     creator: mongoose.Schema.ObjectId,
-    title: String,
-    description: String,
+    title: { type: String },
+    description: { type: String },
     image: String,
     country: String,
     city: String,
