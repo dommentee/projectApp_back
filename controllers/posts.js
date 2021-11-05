@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
   })
 })
 
+
 //update
 router.put('/:id', (req, res) => {
   Posts.findByIdAndUpdate(req.params.id, req.body, (error, updatedPost) => {
