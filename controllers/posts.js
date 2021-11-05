@@ -15,6 +15,12 @@ router.get('/', (req, res) => {
   })
 })
 
+// router.get('/country', (req, res) => {
+//   Posts.find({}, (erorr, foundPosts) => {
+//     res.json(foundPosts)
+//   })
+// })
+
 //update
 router.put('/:id', (req, res) => {
   Posts.findByIdAndUpdate(req.params.id, req.body, (error, updatedPost) => {
