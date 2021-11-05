@@ -24,7 +24,7 @@ app.use(express.json())//call express.json for data
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.send("post app")
+  res.redirect('/posts')
 })
 
 // controllers
