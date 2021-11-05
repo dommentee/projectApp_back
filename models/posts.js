@@ -8,7 +8,6 @@ const postsSchema = new mongoose.Schema(
     image: String,
     country: String,
     city: String,
-
     comments: [
       {
         creator: mongoose.Schema.ObjectId,//might be String
