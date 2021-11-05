@@ -2,12 +2,19 @@ const mongoose = require('mongoose')
 
 const postsSchema = new mongoose.Schema(
   {
+    creator: mongoose.Schema.ObjectId,
     title: String,
     description: String,
+    image: String,
+    country: String,
+    city: String,
     comments: [
       {
-        creater: mongoose.Schema.ObjectId,//might be String
+        creator: mongoose.Schema.ObjectId,//might be String
         comment: String
+      },
+      {
+        timestamps: true,
       }
     ]
   },
