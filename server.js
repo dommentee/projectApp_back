@@ -23,13 +23,13 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.json())//call express.json for data
 app.use(cors())
 
-app.get('/', (req, res) => {
-  res.redirect('/posts')
-})
-
 // controllers
 const postsController = require('./controllers/posts.js')
 app.use('/posts', postsController)
+
+app.get('/', (req, res) => {
+  res.redirect('/posts')
+})
   
 app.listen(PORT, () => {
   console.log('listening to', PORT)
