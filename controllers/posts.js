@@ -28,6 +28,11 @@ router.put('/:id', (req, res) => {
     res.json(updatedPost)
   })
 })
+router.post('/:id/comments', (req, res) => {
+  Posts.findByIdAndUpdate(req.params.id, { $push: { comments: req.body.comments } }, (error, postComment) => {
+    res.json(postComment)
+  })
+})
 
 //delete
 router.delete('/:id', (req, res) => {
