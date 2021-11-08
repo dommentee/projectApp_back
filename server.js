@@ -19,13 +19,16 @@ db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 
-
 app.use(express.json())//call express.json for data
 app.use(cors())
+
 
 // controllers
 const postsController = require('./controllers/posts.js')
 app.use('/posts', postsController)
+
+
+
 
 app.get('/', (req, res) => {
   res.redirect('/posts')

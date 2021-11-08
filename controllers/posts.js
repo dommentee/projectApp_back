@@ -15,6 +15,12 @@ router.get('/', (req, res) => {
   })
 })
 
+//get all post country
+router.get('/:country', (req, res) => {
+  Posts.find({country: req.params.country}, (erorr, postsCountry) => {
+    res.json(postsCountry)
+  })
+})
 
 //update
 router.put('/:id', (req, res) => {
