@@ -10,16 +10,16 @@ router.post('/', (req, res) => {
 })
 //read
 router.get('/', (req, res) => {
-  Posts.find({}, (erorr, foundPosts) => {
-    res.json(foundPosts)
-  })
-})
-
-//get all post country
-router.get('/:country', (req, res) => {
-  Posts.find({country: req.params.country}, (erorr, postsCountry) => {
-    res.json(postsCountry)
-  })
+  if (req.query.country) {
+    console.log(req.query.country);
+    Posts.find({country: req.query.country}, (erorr, postsCountry) => {
+      res.json(postsCountry)
+    })
+  } else {
+    Posts.find({}, (erorr, foundPosts) => {
+      res.json(foundPosts)
+    })
+  }
 })
 
 //update
