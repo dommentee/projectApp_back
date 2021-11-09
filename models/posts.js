@@ -11,7 +11,7 @@ const postsSchema = new mongoose.Schema(
     comments: [
       {
         creator: mongoose.Schema.ObjectId,//might be String
-        comment: String
+        comment: [String]
       },
       {
         timestamps: true,
